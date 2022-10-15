@@ -1,3 +1,34 @@
+@font-face {
+  font-family: 'LexendDeca' !important;
+  font-weight: 100 900 !important;
+  font-display: swap !important;
+  font-style: normal !important;
+  font-named-instance: 'Thin' !important;
+  src: url(/fonts/LexendDeca-ExtraLight.ttf) format("ttf") !important;
+}
+
 body {
-  background-color: beige
+  font-family: 'LexendDeca-Thin';
+  font-size: 22px;
+  font-weight: 100;
+  .navbar {
+    .container {
+      padding: 20px;
+      @media  (max: 450px) {
+        padding: 0 20px !important;
+      }
+      .navbar-toggler {
+        border: none !important;
+        &:focus {
+          box-shadow: none;
+        }
+      }
+    }
+  }
+    main {
+      margin: 10px !important;
+      @media (max: 450px) {
+        margin: 5px !important;
+      }
+    }
 }
