@@ -1,8 +1,8 @@
-import * as React from "react"
-import Layout from "../components/layout"
-import { useStaticQuery, graphql } from "gatsby"
+import * as React from "react";
+import Layout from "../components/layout";
+import { useStaticQuery, graphql } from "gatsby";
 import { renderRichText } from "gatsby-source-contentful/rich-text";
-import { GatsbyImage, getImage } from "gatsby-plugin-image"
+import { GatsbyImage, getImage } from "gatsby-plugin-image";
 
 const AboutPage = () => {
   const data = useStaticQuery(graphql`
@@ -12,7 +12,7 @@ const AboutPage = () => {
           raw
         }
         picture {
-          gatsbyImageData(width:1200)
+          gatsbyImageData(width:1200, placeholder: BLURRED, formats: [AUTO, WEBP, AVIF])
         }
       }
     }
