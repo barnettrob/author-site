@@ -1,8 +1,8 @@
 import React from "react";
 import Layout from "../components/layout";
 import { useStaticQuery, graphql } from "gatsby";
-import { renderRichText } from "gatsby-source-contentful/rich-text";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
+import { Card } from "react-bootstrap";
 
 const Blogs = () => {
   const data = useStaticQuery(graphql`
@@ -14,29 +14,27 @@ const Blogs = () => {
           blogImage {
             gatsbyImageData(width:1200, placeholder: BLURRED, formats: [AUTO, WEBP, AVIF])
           }
-          body {
-            raw
-          }
+          shortDescription
         }
       }
     }
   `)
-  console.log("data", data)
+
   return (
     <Layout>
       <div className="blogs">
         {data.allContentfulBlogPost.nodes.map(blog => {
           return (
             <div key={blog.contentful_id}>
-              <div>
-                {blog.title}
-              </div>
-              <div>
+              <Card className="my-5">
                 <GatsbyImage image={getImage(blog.blogImage)} alt="Maija Barnett" />
-              </div>
-              <div>
-                {renderRichText(blog.body)}
-              </div>
+                <Card.Body>
+                  <Card.Title>{blog.title}</Card.Title>
+                  <Card.Text>
+                  {blog.shortDescription}
+                  </Card.Text>
+                </Card.Body>
+              </Card>
             </div>
           )
         })}
