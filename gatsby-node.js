@@ -19,6 +19,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
           edges {
             node {
               title
+              pathAlias
               shortDescription
               blogImage {
                 gatsbyImageData(width: 800, placeholder: BLURRED, formats: [AUTO, WEBP, AVIF])
@@ -40,7 +41,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   const postsPerPage = 2
   const numPages = Math.ceil(posts.length / postsPerPage)
 
-  // Create the blog index page.
+  // Create the blog listing pages.
   createPage({
     path: '/blogs',
     component: path.resolve(__dirname, 'src/templates/blog-list.js'),
@@ -62,16 +63,29 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
       },
     })
   })
+
+  // Create each blog page.
+  posts.forEach(({ node }) => {
+    const alias = node.pathAlias;
+
+    createPage({
+      path: `/blog/${alias}`,
+      component: path.resolve("./src/templates/blog-post.js"),
+      context: {
+        alias: alias,
+      }
+    })
+  });
 }
 
-exports.onCreateNode = ({ node, actions, getNode }) => {
-  const { createNodeField } = actions
-  if (node.internal.type === `allContentfulBlogPost`) {
-    const value = createFilePath({ node, getNode })
-    createNodeField({
-      name: `slug`,
-      node,
-      value,
-    })
-  }
-}
+// exports.onCreateNode = ({ node, actions, getNode }) => {
+//   const { createNodeField } = actions
+//   if (node.internal.type === `allContentfulBlogPost`) {
+//     const value = createFilePath({ node, getNode })
+//     createNodeField({
+//       name: `slug`,
+//       node,
+//       value,
+//     })
+//   }
+// }

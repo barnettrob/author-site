@@ -30,5 +30,15 @@ body {
       @media (max: 450px) {
         margin: 5px !important;
       }
+      .pagination {
+        .page-link.active {
+          background-color: gray;
+          border-color: gray;
+          color: #fff;
+        }
+        .page-link {
+          color: #606060;
+        }
+      }
     }
 }

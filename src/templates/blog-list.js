@@ -1,6 +1,6 @@
 import React from "react";
 import Layout from "../components/layout";
-import {graphql } from "gatsby";
+import {Link, graphql } from "gatsby";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import { Card } from "react-bootstrap";
 import { Pagination } from "../components/pagination";
@@ -16,16 +16,23 @@ export default class BlogList extends React.Component {
         {posts.map(blog => {
           return (
             <div key={blog.node.contentful_id}>
-              <Card className="my-5">
-                <GatsbyImage image={getImage(blog.node.blogImage)} alt="Maija Barnett" />
-                <Card.Body>
-                  <Card.Subtitle>{blog.node.createdAt}</Card.Subtitle>
-                  <Card.Title className="fs-3">{blog.node.title}</Card.Title>
-                  <Card.Text className="text-muted">
-                  {blog.node.shortDescription}
-                  </Card.Text>
-                </Card.Body>
-              </Card>
+              <Link 
+                    to={`/blog/${blog.node.pathAlias}`}
+                    className="text-dark text-decoration-none"
+              >
+                <Card className="my-5">
+                  <GatsbyImage image={getImage(blog.node.blogImage)} alt="Maija Barnett" />
+                  <Card.Body>
+                    <Card.Subtitle>{blog.node.createdAt}</Card.Subtitle>
+                    <Card.Title className="fs-3">
+                      {blog.node.title}
+                    </Card.Title>
+                    <Card.Text className="text-muted">
+                    {blog.node.shortDescription}
+                    </Card.Text>
+                  </Card.Body>
+                </Card>
+              </Link>
             </div>
           )
         })}
@@ -47,6 +54,7 @@ export const blogListQuery = graphql`
         node {
           contentful_id
           title
+          pathAlias
           shortDescription
           createdAt(formatString: "MM/DD/YYYY")
           blogImage {

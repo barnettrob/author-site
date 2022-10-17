@@ -23,7 +23,7 @@ export const Pagination = ({ pageInfo }) => {
   const nextClass = currentPage === pageCount ? 'disabled' : 'enabled'
 
   return (
-    <ul className="pagination">
+    <ul className="pagination justify-content-center">
       <li className='page-item'>
         <Link className={`${prevClass} page-link`} to={prevPagePath} rel="prev">
           {'Previous'}
@@ -36,8 +36,8 @@ export const Pagination = ({ pageInfo }) => {
           numClass = 'currentPage active'
         }
         return (
-          <li className='page=item'>
-            <Link to={getPageNumberPath(i)} className={`${numClass} page-link`} key={i + 1}>
+          <li className='page=item' key={i + 1}>
+            <Link to={getPageNumberPath(i)} className={`${numClass} page-link`}>
               {i + 1}
             </Link>
           </li>
