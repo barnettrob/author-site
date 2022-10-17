@@ -3,8 +3,8 @@
   font-weight: 100 900 !important;
   font-display: swap !important;
   font-style: normal !important;
-  font-named-instance: 'Thin' !important;
-  src: url(/fonts/LexendDeca-ExtraLight.ttf) format("ttf") !important;
+  font-named-instance: 'Light' !important;
+  src: url(/fonts/LexendDeca-Light.ttf) format("ttf") !important;
 }
 
 body {
@@ -40,5 +40,11 @@ body {
           color: #606060;
         }
       }
+    }
+    main.content-wrapper {
+      min-height: calc(80vh - 50px);
+    }
+    .footer {
+      height: 50px;
     }
 }
