@@ -8,7 +8,15 @@ export const onRenderBody = ({ setHeadComponents }) => {
       as="font"
       type="font/ttf"
       crossOrigin="anonymous"
-      key="interFont"
+      key="lexenddeca"
     />,
+    <link
+    rel="preload"
+    href="/fonts/DancingScript-Regular.ttf"
+    as="font"
+    type="font/ttf"
+    crossOrigin="anonymous"
+    key="dancingscript"
+  />,
   ])
 }
