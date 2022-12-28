@@ -16,7 +16,7 @@ export const onRenderBody = ({ setHeadComponents }) => {
     as="font"
     type="font/ttf"
     crossOrigin="anonymous"
-    key="dancingscript"
+    key="dancing"
   />,
   ])
 }
