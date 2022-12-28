@@ -9,11 +9,11 @@
 
 @font-face {
   font-family: 'Dancing Script' !important;
-  src: url(/fonts/DancingScript-Regular.ttf) format("ttf") !important;
-  font-style: normal;
-  font-named-instance: 'Regular' !important;
   font-weight: 400 !important;
   font-display: swap !important;
+  font-style: normal !important;
+  font-named-instance: 'Regular' !important;
+  src: url(/fonts/DancingScript-Regular.ttf) format("ttf") !important;
 }
 
 body {
@@ -54,8 +54,8 @@ body {
     }
     .author-name {
       //font-family: 'Vujahday Script', cursive;
-      font-family: 'Dancing Script', cursive;
-      font-size: 32px;
+      font-family: 'Dancing Script', 'Arial', cursive;
+      font-size: 28px;
     }
   }
     main {
