@@ -20,7 +20,7 @@ export default class BlogList extends React.Component {
                     to={`/blog/${blog.node.pathAlias}`}
                     className="text-dark text-decoration-none"
               >
-                <Card className="my-5">
+                <Card className="my-5 shadow bg-body rounded">
                   <GatsbyImage image={getImage(blog.node.blogImage)} alt="Maija Barnett" />
                   <Card.Body>
                     <Card.Subtitle>{blog.node.createdAt}</Card.Subtitle>

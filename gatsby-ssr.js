@@ -4,11 +4,19 @@ export const onRenderBody = ({ setHeadComponents }) => {
   setHeadComponents([
     <link
       rel="preload"
-      href="/fonts/LexendDeca-ExtraLight.ttf"
+      href="/fonts/LexendDeca-Regular.ttf"
       as="font"
       type="font/ttf"
       crossOrigin="anonymous"
-      key="interFont"
+      key="lexenddeca"
     />,
+    <link
+      rel="preload"
+      href="/fonts/DancingScript-Regular.ttf"
+      as="font"
+      type="font/ttf"
+      crossOrigin="anonymous"
+      key="dancing"
+  />,
   ])
 }

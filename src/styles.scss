@@ -3,15 +3,34 @@
   font-weight: 100 900 !important;
   font-display: swap !important;
   font-style: normal !important;
-  font-named-instance: 'Light' !important;
-  src: url(/fonts/LexendDeca-Light.ttf) format("ttf") !important;
+  font-named-instance: 'Thin' !important;
+  src: url(/fonts/LexendDeca-Thin.ttf) format("ttf") !important;
+}
+
+@font-face {
+  font-family: 'Dancing Script' !important;
+  font-weight: normal !important;
+  font-display: swap !important;
+  font-style: normal !important;
+  font-named-instance: 'Regular' !important;
+  src: url(/fonts/DancingScript-Regular.ttf) format("ttf") !important;
 }
 
 body {
-  font-family: 'LexendDeca-Thin';
+  font-family: 'LexendDeca';
   font-size: 22px;
-  font-weight: 100;
+  font-weight: normal;
+  background-color: #ebebed !important;
   .navbar {
+    background-color: #ac2521 !important;
+    background-color: #d76d43 !important;
+    background-color: #ab4a28 !important;
+    //background-color: #934628 !important;
+    a {
+      color: #e8dda6 !important;
+      color: #ded4ae !important;
+      color: #efe7b3 !important;
+    }
     .container {
       padding: 20px;
       @media  (max: 450px) {
@@ -19,13 +38,28 @@ body {
       }
       .navbar-toggler {
         border: none !important;
+        .navbar-toggler-icon {
+          color: #efe7b3 !important;
+          background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(239,231,179, 1.0)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+        }
+        .btn-close {
+          color: #efe7b3 !important;
+          background: transparent url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' stroke='rgba(239,231,179, 1.0)' fill='rgba(239,231,179, 1.0)' %3e%3cpath d='M.293.293a1 1 0 0 1 1.414 0L8 6.586 14.293.293a1 1 0 1 1 1.414 1.414L9.414 8l6.293 6.293a1 1 0 0 1-1.414 1.414L8 9.414l-6.293 6.293a1 1 0 0 1-1.414-1.414L6.586 8 .293 1.707a1 1 0 0 1 0-1.414z'/%3e%3c/svg%3e") center/1em auto no-repeat;
+          opacity: 1.0;
+        }
         &:focus {
           box-shadow: none;
         }
       }
     }
+    .author-name {
+      //font-family: 'Vujahday Script', cursive;
+      font-family: 'Dancing Script', 'Arial', cursive;
+      font-size: 28px;
+    }
   }
     main {
+      background-color: #ebebed !important;
       margin: 10px !important;
       @media (max: 450px) {
         margin: 5px !important;
@@ -34,9 +68,20 @@ body {
         .page-link.active {
           background-color: gray;
           border-color: gray;
+          background-color: #ab4a28;
+          border-color: #ab4a28;
           color: #fff;
+          color: #efe7b3;
+          &:hover {
+            background-color: #ab4a28;
+            border-color: #ab4a28;
+          }
         }
         .page-link {
+          &:hover {
+            background-color: #f2e9c0;
+            border-color: #f2e9c0;
+          }
           color: #606060;
         }
       }
