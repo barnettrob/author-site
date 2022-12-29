@@ -3,13 +3,13 @@
   font-weight: 100 900 !important;
   font-display: swap !important;
   font-style: normal !important;
-  font-named-instance: 'Light' !important;
-  src: url(/fonts/LexendDeca-Light.ttf) format("ttf") !important;
+  font-named-instance: 'Thin' !important;
+  src: url(/fonts/LexendDeca-Thin.ttf) format("ttf") !important;
 }
 
 @font-face {
-  font-family: 'Dancing' !important;
-  font-weight: 400 !important;
+  font-family: 'Dancing Script' !important;
+  font-weight: normal !important;
   font-display: swap !important;
   font-style: normal !important;
   font-named-instance: 'Regular' !important;
@@ -17,9 +17,9 @@
 }
 
 body {
-  font-family: 'LexendDeca-Thin';
+  font-family: 'LexendDeca';
   font-size: 22px;
-  font-weight: 100;
+  font-weight: normal;
   background-color: #ebebed !important;
   .navbar {
     background-color: #ac2521 !important;
@@ -54,7 +54,7 @@ body {
     }
     .author-name {
       //font-family: 'Vujahday Script', cursive;
-      font-family: 'Dancing', 'Arial', cursive;
+      font-family: 'Dancing Script', 'Arial', cursive;
       font-size: 28px;
     }
   }
