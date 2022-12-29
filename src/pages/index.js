@@ -21,7 +21,8 @@ const IndexPage = () => {
       </div>
       <iframe 
         type="text/html" 
-        sandbox="allow-scripts allow-same-origin allow-popups" 
+        sandbox="allow-scripts allow-same-origin allow-popups"
+        title="blackwaters"
         width="336" 
         height="550" 
         frameborder="0" 
