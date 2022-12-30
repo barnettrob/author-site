@@ -24,6 +24,7 @@ const IndexPage = () => {
         sandbox="allow-scripts allow-same-origin allow-popups" 
         width="336" 
         height="550" 
+        title="blackwaters"
         frameborder="0" 
         allowfullscreen 
         style={{ maxWidth: "100%" }}

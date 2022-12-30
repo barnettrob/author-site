@@ -22,8 +22,8 @@ const AboutPage = () => {
 
   return (
     <Layout>
-      <div className="about">
-        <div className="description">
+      <div className="about d-flex">
+        <div className="description pe-5">
           {renderRichText(data.contentfulPage.body)}
         </div>
         <div className="picture">

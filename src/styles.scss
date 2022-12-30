@@ -92,4 +92,21 @@ body {
     .footer {
       height: 50px;
     }
+  .about {
+    .description {
+      width: 60%;
+    }
+    .picture {
+      width: 35%;
+    }
+  }
+  @media (max-width: 767px) {
+    .about {
+      display: block !important;
+      .description,
+      .picture {
+        width: 100%;
+      }
+    }
+  }
 }
