@@ -19,6 +19,7 @@ const Events = () => {
                 }
                 address
                 dateTime
+                id
                 }
               }
             }
@@ -40,7 +41,7 @@ const Events = () => {
                   });
 
                 return ( 
-                    <div className="container">
+                    <div className="container" key={event.node.id}>
                         <div className="title h5">
                             {event.node.title}
                         </div>

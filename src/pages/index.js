@@ -34,6 +34,7 @@ const IndexPage = () => {
             synopsis {
               raw
             }
+            id
           }
         }
       }
@@ -53,7 +54,7 @@ const IndexPage = () => {
             srcVal = srcVal.slice(1, -1);
             
             return (
-              <div className="py-4 container-sm">
+              <div className="py-4 container-sm" key={book.node.id}>
                 <iframe 
                   type="text/html" 
                   sandbox="allow-scripts allow-same-origin allow-popups" 
@@ -73,12 +74,12 @@ const IndexPage = () => {
           const bookCover = book.node.bookCover;
           if (amazonLink !== null && bookCover !== null) {
             return (
-              <div className="py-4 container-sm">
+              <div className="py-4 container-sm" key={book.node.id}>
                 <div className="text-center">
                   <a href={amazonLink}>
                     <GatsbyImage 
                       image={getImage(book.node.bookCover)} 
-                      alt={book.node.description}
+                      alt={book.node.title}
                     />
                   </a>
                   <div className="text-center">
@@ -113,10 +114,10 @@ const IndexPage = () => {
 
           if (amazonLink === null && bookCover !== null) {
             return (
-              <div className="py-4 container-sm">
+              <div className="py-4 container-sm" key={book.node.id}>
                 <GatsbyImage 
                   image={getImage(book.node.bookCover)} 
-                  alt={book.node.description}
+                  alt={book.node.title}
                 />
               </div>
             )
