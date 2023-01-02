@@ -12,7 +12,10 @@ const IndexPage = () => {
           raw
         }
       }
-      allContentfulBook(sort: {order: DESC, fields: publishDate}) {
+      allContentfulBook(
+        sort: {order: DESC, fields: publishDate}
+        filter: {show: {eq: true}, upcoming: {eq: false}}
+        ) {
         edges {
           node {
             amazonEmbed {
@@ -21,9 +24,15 @@ const IndexPage = () => {
               }
             }
             amazonLink
+            barnesAndNobleLink
             bookCover {
               gatsbyImageData(width: 336, placeholder: BLURRED, formats: AUTO)
               description
+            }
+            title
+            publisher
+            synopsis {
+              raw
             }
           }
         }
@@ -44,7 +53,7 @@ const IndexPage = () => {
             srcVal = srcVal.slice(1, -1);
             
             return (
-              <div className="py-4">
+              <div className="py-4 container-sm">
                 <iframe 
                   type="text/html" 
                   sandbox="allow-scripts allow-same-origin allow-popups" 
@@ -64,20 +73,47 @@ const IndexPage = () => {
           const bookCover = book.node.bookCover;
           if (amazonLink !== null && bookCover !== null) {
             return (
-              <div className="py-4">
-                <a href={amazonLink}>
-                  <GatsbyImage 
-                    image={getImage(book.node.bookCover)} 
-                    alt={book.node.description}
-                  />
-                </a>
+              <div className="py-4 container-sm">
+                <div className="text-center">
+                  <a href={amazonLink}>
+                    <GatsbyImage 
+                      image={getImage(book.node.bookCover)} 
+                      alt={book.node.description}
+                    />
+                  </a>
+                  <div className="text-center">
+                    <a 
+                      href={amazonLink}
+                      type="button" 
+                      className="btn btn-outline-primary mt-2"
+                    >
+                      Get your copy
+                    </a>
+                  </div>
+                </div>
+                <div className="h3 pt-5">
+                  {book.node.title}
+                </div>
+                <div className="text-muted fs-6 py-3">
+                  <span className="me-2 text-black">Publishing House:</span> 
+                  {book.node.publisher}
+                </div>
+                <div className="text-muted fs-5">
+                  {renderRichText(book.node.synopsis)}
+                </div>
+                <div className="fs-5 text-center py-3">
+                  Also available at {" "}
+                  <a href={book.node.barnesAndNobleLink}>
+                    Barnes & Nobles
+                  </a>
+                </div>
               </div>
             )
           }
 
           if (amazonLink === null && bookCover !== null) {
             return (
-              <div className="py-4">
+              <div className="py-4 container-sm">
                 <GatsbyImage 
                   image={getImage(book.node.bookCover)} 
                   alt={book.node.description}

@@ -109,4 +109,12 @@ body {
       }
     }
   }
+  .btn-outline-primary {
+    color: #ab4a28 !important;
+    border-color: #ab4a28 !important;
+    &:hover {
+      color: #fff !important;
+      background-color: #ab4a28 !important;
+    }
+  }
 }
