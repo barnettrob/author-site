@@ -32,6 +32,13 @@ const Events = () => {
             </h1>
             <div className="events">
             {data.allContentfulEvent.edges.map(event => {
+                const eventDate = new Date(event.node.dateTime);
+                const eventDateLocal = eventDate.toLocaleString('en-US', {
+                    timeZone: 'America/New_York',
+                    dateStyle: 'full',
+                    timeStyle: 'full',
+                  });
+
                 return ( 
                     <div className="container">
                         <div className="title h5">
@@ -50,7 +57,7 @@ const Events = () => {
                                 Date & Time: {" "}
                             </span>
                             <span className="time">
-                                {event.node.dateTime}
+                                {eventDateLocal.replace(" Eastern Daylight Time", "")}
                             </span>
                         </div>
                         <div className="description py-3 fs-6">
