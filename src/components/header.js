@@ -33,6 +33,16 @@ const Header = () => {
                 >
                   Blog
                 </NavLink>
+                <NavLink
+                  href="/upcoming-book"
+                >
+                  Upcoming Book
+                </NavLink>
+                <NavLink
+                  href="/events"
+                >
+                  Events
+                </NavLink>
             </Nav>
           </Navbar.Collapse>
       </Container>

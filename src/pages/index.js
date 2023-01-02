@@ -101,9 +101,9 @@ const IndexPage = () => {
                 <div className="text-muted fs-5">
                   {renderRichText(book.node.synopsis)}
                 </div>
-                <div className="fs-5 text-center py-3">
+                <div className="fs-6 text-center py-3">
                   Also available at {" "}
-                  <a href={book.node.barnesAndNobleLink}>
+                  <a href={book.node.barnesAndNobleLink} className="bn">
                     Barnes & Nobles
                   </a>
                 </div>
@@ -123,6 +123,9 @@ const IndexPage = () => {
           }
           
           if (amazonLink === null && bookCover === null) {
+            return <></>
+          }
+          else {
             return <></>
           }
         }
