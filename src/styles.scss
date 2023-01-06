@@ -91,6 +91,15 @@ body {
     }
     .footer {
       height: 50px;
+      svg {
+        height: 30px;
+        max-width: 30px;
+      }
+    }
+    @media (max-width: 767px) {
+      .footer {
+        display: block !important;
+      }
     }
   .about {
     .description {
