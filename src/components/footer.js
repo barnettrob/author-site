@@ -1,6 +1,9 @@
 import React from "react";
 import { Link } from "gatsby";
 import TwitterIcon from "./twitter";
+import InstagramIcon from "./instagram";
+import GoodReadsIcon from "./goodreads";
+import FacebookIcon from "./facebook";
 
 const Footer = () => {
   const date = new Date();
@@ -14,6 +17,33 @@ const Footer = () => {
           >
             <TwitterIcon />
             Twitter
+          </Link>
+        </li>
+        <li className="p-3">
+          <Link 
+            to="http://www.twitter.com/MaijaBarnett"
+            className="text-decoration-none text-muted"
+          >
+            <InstagramIcon />
+            Instagram
+          </Link>
+        </li>
+        <li className="p-3">
+          <Link 
+            to="http://www.twitter.com/MaijaBarnett"
+            className="text-decoration-none text-muted"
+          >
+            <GoodReadsIcon />
+            GoodReads
+          </Link>
+        </li>
+        <li className="p-3">
+          <Link 
+            to="http://www.twitter.com/MaijaBarnett"
+            className="text-decoration-none text-muted"
+          >
+            <FacebookIcon />
+            Facebook
           </Link>
         </li>
         <li className="p-3">
