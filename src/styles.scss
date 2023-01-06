@@ -96,6 +96,11 @@ body {
         max-width: 30px;
       }
     }
+    @media (max-width: 767px) {
+      .footer {
+        display: block !important;
+      }
+    }
   .about {
     .description {
       width: 60%;
