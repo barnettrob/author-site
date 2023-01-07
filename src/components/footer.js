@@ -1,9 +1,4 @@
 import React from "react";
-import { Link } from "gatsby";
-import TwitterIcon from "./socialMedia/icons/twitter";
-import InstagramIcon from "./socialMedia/icons/instagram";
-import GoodReadsIcon from "./socialMedia/icons/goodreads";
-import FacebookIcon from "./socialMedia/icons/facebook";
 import SocialMedia from "./socialMedia";
 
 const Footer = () => {

@@ -39,6 +39,8 @@ const SocialMedia = () => {
                     case 'twitter':
                         svgIcon = <TwitterIcon />
                         break;
+                    default:
+                        svgIcon = <></>
                 }
                 return (
                     <li className="p-3" key={social.node.id}>
