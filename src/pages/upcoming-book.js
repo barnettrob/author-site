@@ -5,6 +5,7 @@ import Books from "../components/books";
 const UpcomingBook = () => {
     return (
         <Layout>
+            <h1 className="h4">Upcoming Books</h1>
             <Books upcoming={true} />
         </Layout>
     )
