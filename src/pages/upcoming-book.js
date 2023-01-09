@@ -1,10 +1,11 @@
 import * as React from "react";
 import Layout from "../components/layout";
+import Books from "../components/books";
 
 const UpcomingBook = () => {
     return (
         <Layout>
-            Coming Soon!
+            <Books upcoming={true} />
         </Layout>
     )
 }

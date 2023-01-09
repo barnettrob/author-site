@@ -1,5 +1,5 @@
 import React from "react";
-import { Link, useStaticQuery, graphql } from "gatsby";
+import { useStaticQuery, graphql } from "gatsby";
 import FacebookIcon from "./icons/facebook";
 import GoodReadsIcon from "./icons/goodreads";
 import InstagramIcon from "./icons/instagram";
@@ -44,13 +44,13 @@ const SocialMedia = () => {
                 }
                 return (
                     <li className="p-3" key={social.node.id}>
-                    <Link 
-                        to={social.node.url}
+                    <a 
+                        href={social.node.url}
                         className="text-decoration-none text-muted"
                     >
                         {svgIcon}
                         {social.node.title}
-                    </Link>
+                    </a>
                     </li>
                 )
         })}
