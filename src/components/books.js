@@ -25,6 +25,10 @@ const Books = ( props ) => {
                 id
                 title
                 publisher
+                publisherReference {
+                  url
+                  name
+                }
                 upcoming
                 synopsis {
                   raw
@@ -63,63 +67,77 @@ const Books = ( props ) => {
                   alt={book.node.title}
                 />
               }
-
+              
               const amazonLink = book.node.amazonLink;
               const bookCover = book.node.bookCover;
-              if (amazonLink !== null && bookCover !== null) {
-                return (
-                  <div className="py-4 container-sm" key={book.node.id}>
-                    <div className="text-center">
-                      <a href={amazonLink}>
-                        {bookDisplay}
-                      </a>
-                      <div className="text-center">
-                        <a 
-                          href={amazonLink}
-                          type="button" 
-                          className="btn btn-outline-primary mt-2"
-                        >
-                          Get your copy on Amazon
+ 
+              return (
+                <div className="py-4 container-sm" key={book.node.id}>
+                  <div className="text-center">
+                    {amazonLink !== null && bookCover !== null && (
+                      <>
+                        <a href={amazonLink}>
+                          {bookDisplay}
                         </a>
+                        <div className="text-center">
+                          <a 
+                            href={amazonLink}
+                            type="button" 
+                            className="btn btn-outline-primary mt-2"
+                          >
+                            Get your copy on Amazon
+                          </a>
+                        </div>
+                      </>
+                    )}
+                    {amazonLink === null && book.node.amazonEmbed === null 
+                    && bookCover !== null && (
+                      <div>
+                        {bookDisplay}
                       </div>
-                    </div>
+                    )}
+                    {amazonLink === null && book.node.amazonEmbed !== null 
+                    && bookCover === null && (
+                      <div>
+                        {bookDisplay}
+                      </div>
+                    )}
+                  </div>
+                  {book.node.title !== null && (
                     <div className="h3 pt-5">
                       {book.node.title}
                     </div>
+                  )}
+                  {book.node.publisherReference !== null && (
                     <div className="text-muted fs-6 py-3">
                       <span className="me-2 text-black">Publishing House:</span> 
-                      {book.node.publisher}
+                        <a 
+                          href={book.node.publisherReference.url} 
+                          className="bn"
+                        >
+                          {book.node.publisherReference.name}
+                        </a>
                     </div>
+                  )}
+                  {book.node.synopsis !== null && (
                     <div className="text-muted fs-5">
                       {renderRichText(book.node.synopsis)}
                     </div>
+                  )}
+                  {book.node.barnesAndNobleLink !== null && (
                     <div className="fs-6 text-center py-3">
                       Also available at {" "}
                       <a href={book.node.barnesAndNobleLink} className="bn">
                         Barnes & Nobles
                       </a>
                     </div>
-                  </div>
-                )
-              }
-
-              if (amazonLink === null && bookCover !== null) {
-                return (
-                  <div className="py-4 container-sm" key={book.node.id}>
-                    {bookDisplay}
-                  </div>
-                )
-              }
+                  )}
+                </div>
+              )
               
-              if (amazonLink === null && bookCover === null) {
-                return <div key={index}></div>
-              }
-              else {
-                return <div key={index}>Check back soon!</div>
-              }
             }
             else {
-              return <div key={index}>Check back soon!</div>
+              return <div key={index}></div>
             }
           })}
         </>
