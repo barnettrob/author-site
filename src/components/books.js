@@ -69,12 +69,11 @@ const Books = ( props ) => {
               }
               
               const amazonLink = book.node.amazonLink;
-              const bookCover = book.node.bookCover;
  
               return (
                 <div className="py-4 container-sm" key={book.node.id}>
                   <div className="text-center">
-                    {amazonLink !== null && bookCover !== null && (
+                    {amazonLink !== null && bookDisplay !== <></> && (
                       <>
                         <a href={amazonLink}>
                           {bookDisplay}
@@ -90,21 +89,14 @@ const Books = ( props ) => {
                         </div>
                       </>
                     )}
-                    {amazonLink === null && book.node.amazonEmbed === null 
-                    && bookCover !== null && (
-                      <div>
-                        {bookDisplay}
-                      </div>
-                    )}
-                    {amazonLink === null && book.node.amazonEmbed !== null 
-                    && bookCover === null && (
+                    {amazonLink === null && bookDisplay !== <></> && (
                       <div>
                         {bookDisplay}
                       </div>
                     )}
                   </div>
                   {book.node.title !== null && (
-                    <div className="h3 pt-5">
+                    <div className="py-4">
                       {book.node.title}
                     </div>
                   )}
