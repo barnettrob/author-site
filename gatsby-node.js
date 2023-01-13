@@ -3,7 +3,6 @@
  */
 
 const path = require("path")
-const { createFilePath } = require("gatsby-source-filesystem")
 
  // Implement the Gatsby API “createPages”. This is called once the
 // data layer is bootstrapped to let plugins create pages from data.
@@ -77,15 +76,3 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     })
   });
 }
-
-// exports.onCreateNode = ({ node, actions, getNode }) => {
-//   const { createNodeField } = actions
-//   if (node.internal.type === `allContentfulBlogPost`) {
-//     const value = createFilePath({ node, getNode })
-//     createNodeField({
-//       name: `slug`,
-//       node,
-//       value,
-//     })
-//   }
-// }

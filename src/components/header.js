@@ -28,11 +28,11 @@ const Header = () => {
                 >
                   About
                 </NavLink>
-                <NavLink
+                {/* <NavLink
                   href="/blogs"
                 >
                   Blog
-                </NavLink>
+                </NavLink> */}
                 <NavLink
                   href="/upcoming-book"
                 >
