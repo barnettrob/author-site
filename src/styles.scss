@@ -119,6 +119,7 @@ body {
       }
     }
   }
+  a,
   a.bn {
     color: #ab4a28 !important;
   }
@@ -129,5 +130,8 @@ body {
       color: #fff !important;
       background-color: #ab4a28 !important;
     }
+  }
+  .lost-image {
+    max-width: 600px;
   }
 }
