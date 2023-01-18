@@ -32,7 +32,7 @@ body {
       color: #efe7b3 !important;
     }
     .container {
-      padding: 20px;
+      padding: 0 15px;
       @media  (max: 450px) {
         padding: 0 20px !important;
       }
@@ -53,9 +53,12 @@ body {
       }
     }
     .author-name {
-      //font-family: 'Vujahday Script', cursive;
       font-family: 'Dancing Script', 'Arial', cursive;
       font-size: 28px;
+      .logo-image {
+        height: 80px;
+        width: 218px;
+      }
     }
   }
     main {

@@ -1,9 +1,10 @@
 import React from "react";
+import LogoSvg from "./logoSvg";
 
 const Logo = () => {
   return (
     <div className="author-name">
-      Maija Barnett
+      <LogoSvg />
     </div>
   )
 }
