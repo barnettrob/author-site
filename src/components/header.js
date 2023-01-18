@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Container, Nav, Navbar, NavLink } from 'react-bootstrap';
+import NavDropdown from 'react-bootstrap/NavDropdown';
 import Logo from "./logo";
 import CloseButton from "react-bootstrap/CloseButton";
 
@@ -33,11 +34,14 @@ const Header = () => {
                 >
                   Blog
                 </NavLink> */}
-                <NavLink
-                  href="/upcoming-book"
-                >
-                  Upcoming Book
-                </NavLink>
+                <NavDropdown title="Books" id="book-nav-dropdown">
+                  <NavDropdown.Item href="/heart-like-a-broken-arrow">
+                    Heart Like a Broken Arrow
+                  </NavDropdown.Item>
+                  <NavDropdown.Item href="/the-song-im-in">
+                    The Song I'm In
+                  </NavDropdown.Item>
+                </NavDropdown>
                 <NavLink
                   href="/events"
                 >

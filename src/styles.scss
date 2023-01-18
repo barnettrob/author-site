@@ -51,6 +51,12 @@ body {
           box-shadow: none;
         }
       }
+      .dropdown-menu {
+        background-color: #743223;
+        a {
+          background-color: #743223;
+        }
+      }
     }
     .author-name {
       font-family: 'Dancing Script', 'Arial', cursive;
