@@ -56,6 +56,13 @@ body {
         a {
           background-color: #743223;
         }
+        @media (max-width: 450px) {
+          a {
+            &:first-child {
+              padding-bottom: 20px;
+            }
+          }
+        }
       }
     }
     .author-name {
