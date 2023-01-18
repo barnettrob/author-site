@@ -1,14 +1,10 @@
 import React from "react";
-import { StaticImage } from "gatsby-plugin-image";
+import LogoSvg from "./logoSvg";
 
 const Logo = () => {
   return (
     <div className="author-name">
-      <StaticImage 
-        src="../images/maija_logo.png"
-        alt={"Maija Barnett"}
-        className="logo-image"
-      />
+      <LogoSvg />
     </div>
   )
 }
