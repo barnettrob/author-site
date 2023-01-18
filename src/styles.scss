@@ -58,9 +58,8 @@ body {
         }
         @media (max-width: 450px) {
           a {
-            &:first-child {
-              padding-bottom: 20px;
-            }
+            padding-top: 10px;
+            padding-bottom: 10px;
           }
         }
       }
