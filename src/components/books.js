@@ -84,7 +84,7 @@ const Books = ( props ) => {
                             type="button" 
                             className="btn btn-outline-primary mt-2"
                           >
-                            Get your copy on Amazon
+                            Order your advanced copy on Amazon
                           </a>
                         </div>
                       </>
