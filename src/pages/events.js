@@ -18,6 +18,7 @@ const Events = () => {
                     lon
                 }
                 address
+                addressLink
                 dateTime
                 id
                 }
@@ -50,7 +51,11 @@ const Events = () => {
                                 Location: {" "}
                             </span>
                             <span className="address">
-                                {event.node.address}
+                                {event.node.addressLink !== null ? (
+                                <a href={event.node.addressLink}>
+                                    {event.node.address}
+                                </a>
+                                ) : (event.node.address)}
                             </span>
                         </div>
                         <div className="date-time fs-6">
