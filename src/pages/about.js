@@ -35,3 +35,5 @@ const AboutPage = () => {
 }
 
 export default AboutPage
+
+export { Head } from "../components/head";

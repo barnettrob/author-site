@@ -4,8 +4,11 @@ require("dotenv").config({
 
 module.exports = {
   siteMetadata: {
-    title: `Author Site`,
-    siteUrl: `https://www.yourdomain.tld`
+    title: `Maija Barnett`,
+    description: `Maija Barnett's YA verse novel hi-lo author site`,
+    keywords: `maija barnett, ya books, verse novel, hi-lo`,
+    author: `Maija Barnett`,
+    siteUrl: `https://maijabarnett.com`
   },
   plugins: [{
     resolve: 'gatsby-source-contentful',
