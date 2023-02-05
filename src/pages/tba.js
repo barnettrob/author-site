@@ -11,3 +11,5 @@ const SongImIn = () => {
 }
 
 export default SongImIn;
+
+export { Head } from "../components/head";

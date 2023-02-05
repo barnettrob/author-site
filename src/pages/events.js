@@ -78,3 +78,5 @@ const Events = () => {
 }
 
 export default Events;
+
+export { Head } from "../components/head";

@@ -11,3 +11,5 @@ const HeartLikeABrokenArrow = () => {
 }
 
 export default HeartLikeABrokenArrow;
+
+export { Head } from "../components/head";
