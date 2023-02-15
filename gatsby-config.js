@@ -16,12 +16,34 @@ module.exports = {
       "accessToken": process.env.CONTENTFUL_ACCESS_TOKEN,
       "spaceId": process.env.CONTENTFUL_SPACEID
     }
-  }, "gatsby-plugin-image", "gatsby-plugin-sharp", "gatsby-transformer-sharp", "gatsby-plugin-sass", "gatsby-plugin-sitemap", {
+  }, "gatsby-plugin-image", "gatsby-plugin-sharp", "gatsby-transformer-sharp", "gatsby-plugin-sass", {
     resolve: 'gatsby-source-filesystem',
     options: {
       "name": "images",
       "path": "./src/images/"
     },
     __key: "images"
+  },
+  {
+    resolve: 'gatsby-plugin-sitemap',
+    options: {
+      query: `
+      allSitePage(filter: {path: {regex: "/^((?!blog).)*$/s"}}) {
+        nodes {
+          path
+        }
+      }
+      `,
+      resolveSiteUrl: () => siteUrl,
+      resolvePages: ({
+        allSitePage: { nodes: allPages },
+      })
+    },
+    serialize: ({ path, modifiedGmt }) => {
+      return {
+        url: path,
+        lastmod: modifiedGmt,
+      }
+    }
   }]
 };
