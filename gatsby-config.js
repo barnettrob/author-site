@@ -27,23 +27,46 @@ module.exports = {
   {
     resolve: 'gatsby-plugin-sitemap',
     options: {
+      exclude: ['/blog', '/blogs'],
       query: `
-      allSitePage(filter: {path: {regex: "/^((?!blog).)*$/s"}}) {
-        nodes {
-          path
+        allSitePage(filter: {path: {regex: "/^((?!blog).)*$/s"}}) {
+          nodes {
+            path
+          }
         }
-      }
       `,
-      resolveSiteUrl: () => siteUrl,
-      resolvePages: ({
-        allSitePage: { nodes: allPages },
-      })
+      serialize: ({ site, allSitePage }) => {
+        return allSitePage.edges
+          .filter(({ node }) => (
+            node.context.isCanonical !== false
+          ))
+          .map(({ node }) => {
+            return {
+              url: site.siteMetadata.siteUrl + node.path,
+              changefreq: 'daily',
+              priority: 0.7,
+            };
+          });
+      },
     },
-    serialize: ({ path, modifiedGmt }) => {
-      return {
-        url: path,
-        lastmod: modifiedGmt,
-      }
-    }
+    // options: {
+    //   query: `
+    //   allSitePage(filter: {path: {regex: "/^((?!blog).)*$/s"}}) {
+    //     nodes {
+    //       path
+    //     }
+    //   }
+    //   `,
+    //   resolveSiteUrl: () => siteUrl,
+    //   resolvePages: ({
+    //     allSitePage: { nodes: allPages },
+    //   })
+    // },
+    // serialize: ({ path, modifiedGmt }) => {
+    //   return {
+    //     url: path,
+    //     lastmod: modifiedGmt,
+    //   }
+    // }
   }]
 };
