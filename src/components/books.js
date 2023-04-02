@@ -16,6 +16,7 @@ const Books = ( props ) => {
                     content
                   }
                 }
+                amazonLabel
                 amazonLink
                 barnesAndNobleLink
                 bookCover {
@@ -69,6 +70,9 @@ const Books = ( props ) => {
               }
               
               const amazonLink = book.node.amazonLink;
+              const amazonLabel = 
+                typeof book.node.amazonLabel === "undefined" 
+                || book.node.amazonLabel === "" ? "Order on Amazon" : book.node.amazonLabel;
  
               return (
                 <div className="py-4 container-sm" key={book.node.id}>
@@ -84,7 +88,7 @@ const Books = ( props ) => {
                             type="button" 
                             className="btn btn-outline-primary mt-2"
                           >
-                            Order your advanced copy on Amazon
+                            {amazonLabel}
                           </a>
                         </div>
                       </>
