@@ -38,7 +38,7 @@ const Events = () => {
                 const eventDateLocal = eventDate.toLocaleString('en-US', {
                     timeZone: 'America/New_York',
                     dateStyle: 'full',
-                    //timeStyle: 'full',
+                    timeStyle: 'short',
                   });
 
                 return ( 
