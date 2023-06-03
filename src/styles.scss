@@ -149,4 +149,12 @@ body {
   .lost-image {
     max-width: 600px;
   }
+  // Home page tabs.
+  .nav-pills .nav-link.active {
+    border: 1px solid #ab4a28;
+  }
+  .nav-pills .nav-link.active,
+  .nav-pills {
+    background-color: transparent !important;
+  }
 }
