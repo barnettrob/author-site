@@ -159,6 +159,7 @@ body {
   }
   .col-width-responsive {
     max-width: 290px !important;
+    margin-bottom: 20px !important;
   }
   @media (max-width: 550px) {
     .books-front-display {
@@ -167,8 +168,8 @@ body {
         align-self: center;
         margin: 0 auto;
         .front-margin-responsive {
-          margin-top: 1.5rem !important;
-          margin-bottom: 1.5rem !important;
+          margin-top: 0 !important;
+          margin-bottom: 2rem !important;
           margin-right: 0 !important;
           margin-left: 0 !important;
           .shadow-lg-responsive {

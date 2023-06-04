@@ -16,6 +16,7 @@ const IndexPage = () => {
             gatsbyImageData(width: 245, placeholder: BLURRED, formats: AUTO)
             description
           }
+          urlPath
         }
       }
     }
@@ -24,8 +25,8 @@ const IndexPage = () => {
 
   return (
     <Layout>
-      <div className="py-4">
-        Available to read
+      <div className="p-4">
+        Available for order
       </div>
       <div className="row d-flex justify-content-center books-front-display">
       {data.allContentfulBook.edges.map((book, index) => {
@@ -35,12 +36,16 @@ const IndexPage = () => {
             <div className="w-100">
               <div className="mx-4 front-margin-responsive">
                 <div className="shadow-lg shadow-lg-responsive">
-                  
-                <GatsbyImage 
-                  image={getImage(book.node.bookCover)} 
-                  alt={book.node.title}
-                  style={{ 'height': '360px' }}
-                />
+                  <Link 
+                    to={typeof book.node.urlPath !== "undefined" ? 
+                    book.node.urlPath : ""}
+                  >
+                    <GatsbyImage 
+                      image={getImage(book.node.bookCover)} 
+                      alt={book.node.title}
+                      style={{ 'height': '360px' }}
+                    />
+                  </Link>
                 </div>
               </div>
             </div>
@@ -52,7 +57,12 @@ const IndexPage = () => {
             <div className="col-sm-6" key={book.node.id}>
               <div className="w-100">
                 <div className="mx-4">
-                  {book.node.title}
+                  <Link 
+                    to={typeof book.node.urlPath !== "undefined" ? 
+                    book.node.urlPath : ""}
+                  >
+                    {book.node.title}
+                  </Link>
                 </div>
               </div>
             </div>

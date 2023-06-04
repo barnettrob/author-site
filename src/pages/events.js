@@ -6,25 +6,25 @@ import { renderRichText } from "gatsby-source-contentful/rich-text";
 const Events = () => {
     const data = useStaticQuery(graphql`
     {
-        allContentfulEvent {
-            edges {
-              node {
-                title
-                description {
-                    raw
-                }
-                location {
-                    lat
-                    lon
-                }
-                address
-                addressLink
-                dateTime
-                id
-                }
+        allContentfulEvent(filter: {dateTime: {gte: "2023-08-27"}}) {
+          edges {
+            node {
+              title
+              description {
+                raw
               }
+              location {
+                lat
+                lon
+              }
+              address
+              addressLink
+              dateTime
+              id
             }
-    }
+          }
+        }
+      }
   `)
     
     return (
@@ -33,6 +33,9 @@ const Events = () => {
                 Events
             </h1>
             <div className="events">
+            {data.allContentfulEvent.edges.length === 0 && (
+                <div>There are no events at this time.  Please check back soon.</div>
+            )}
             {data.allContentfulEvent.edges.map(event => {
                 const eventDate = new Date(event.node.dateTime);
                 const eventDateLocal = eventDate.toLocaleString('en-US', {
