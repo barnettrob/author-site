@@ -1,6 +1,6 @@
 import * as React from "react";
 import Layout from "../components/layout";
-import { useStaticQuery, graphql } from "gatsby";
+import { useStaticQuery, graphql, Link } from "gatsby";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
 
 
@@ -25,39 +25,39 @@ const IndexPage = () => {
   return (
     <Layout>
       <div className="py-4">
-        Books by Maija
+        Available to read
       </div>
-      <div className="row">
+      <div className="row d-flex justify-content-center books-front-display">
       {data.allContentfulBook.edges.map((book, index) => {
-        console.log("Book", book)
-        let bookDisplay = <></>
         if (book.node.bookCover !== null && typeof book.node.title !== undefined) {
-          bookDisplay =
-          <div className="col-sm-3">
-            <div className="card">
-              <div className="card-body">
+          return (
+          <div className="col col-width-responsive" key={book.node.id}>
+            <div className="w-100">
+              <div className="mx-4 front-margin-responsive">
+                <div className="shadow-lg shadow-lg-responsive">
+                  
                 <GatsbyImage 
                   image={getImage(book.node.bookCover)} 
                   alt={book.node.title}
+                  style={{ 'height': '360px' }}
                 />
+                </div>
               </div>
             </div>
           </div>
+          )
         }
         else {
-          bookDisplay = <div className="col-sm-6">
-              <div className="card">
-                <div className="card-body">
+          return ( 
+            <div className="col-sm-6" key={book.node.id}>
+              <div className="w-100">
+                <div className="mx-4">
                   {book.node.title}
                 </div>
               </div>
             </div>
+          )
         }
-        return (
-          <div key={book.node.id}>
-            {bookDisplay}
-          </div>
-        )
       })}
       </div>
     </Layout>

@@ -157,4 +157,25 @@ body {
   .nav-pills {
     background-color: transparent !important;
   }
+  .col-width-responsive {
+    max-width: 290px !important;
+  }
+  @media (max-width: 550px) {
+    .books-front-display {
+      flex-direction: column !important;
+      .col-width-responsive {
+        align-self: center;
+        margin: 0 auto;
+        .front-margin-responsive {
+          margin-top: 1.5rem !important;
+          margin-bottom: 1.5rem !important;
+          margin-right: 0 !important;
+          margin-left: 0 !important;
+          .shadow-lg-responsive {
+            box-shadow: none !important;
+          }
+        }
+      }
+    }
+  }
 }
