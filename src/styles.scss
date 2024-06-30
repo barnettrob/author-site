@@ -24,7 +24,8 @@ body {
   .navbar {
     background-color: #ac2521 !important;
     background-color: #d76d43 !important;
-    background-color: #ab4a28 !important;
+    background-color: #2f9365 !important;
+    // background-color: #4491a2 !important;
     //background-color: #934628 !important;
     a {
       color: #e8dda6 !important;
@@ -53,8 +54,13 @@ body {
       }
       .dropdown-menu {
         background-color: #743223;
+        background-color: #215910;
+        background-color: #2f6a4f;
+        background-color: #336b51;
         a {
           background-color: #743223;
+          background-color: #215910;
+          background-color: #2f6a4f;
         }
         @media (max-width: 450px) {
           a {
@@ -85,6 +91,8 @@ body {
           border-color: gray;
           background-color: #ab4a28;
           border-color: #ab4a28;
+          background-color: #336b51;
+          border-color: #336b51;
           color: #fff;
           color: #efe7b3;
           &:hover {
@@ -137,13 +145,17 @@ body {
   a,
   a.bn {
     color: #ab4a28 !important;
+    color: #336b51 !important;
   }
   .btn-outline-primary {
     color: #ab4a28 !important;
+    color: #336b51 !important;
     border-color: #ab4a28 !important;
+    border-color: #336b51 !important;
     &:hover {
       color: #fff !important;
       background-color: #ab4a28 !important;
+      background-color: #336b51 !important;
     }
   }
   .lost-image {
@@ -152,6 +164,7 @@ body {
   // Home page tabs.
   .nav-pills .nav-link.active {
     border: 1px solid #ab4a28;
+    border: 1px solid #336b51;
   }
   .nav-pills .nav-link.active,
   .nav-pills {

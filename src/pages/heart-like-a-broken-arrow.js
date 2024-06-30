@@ -5,7 +5,7 @@ import Books from "../components/books";
 const HeartLikeABrokenArrow = () => {
     return (
         <Layout>
-            <Books upcoming={false} />
+            <Books title={"Heart Like a Broken Arrow"} />
         </Layout>
     )
 }
