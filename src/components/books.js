@@ -4,7 +4,7 @@ import { useStaticQuery, graphql } from "gatsby";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
 
 const Books = ( props ) => {
-    const upcoming = props.upcoming;
+    const title = props.title;
 
     const data = useStaticQuery(graphql`
     {
@@ -43,7 +43,7 @@ const Books = ( props ) => {
     return (
         <>
           {data.allContentfulBook.edges.map((book, index) => {
-            if (upcoming === book.node.upcoming) {
+            if (title === book.node.title) {
               let bookDisplay = <></>
               if (book.node.amazonEmbed !== null && 
                 book.node.amazonEmbed.internal.content !== null) {
@@ -73,7 +73,7 @@ const Books = ( props ) => {
               const amazonLabel = 
                 typeof book.node.amazonLabel === "undefined" 
                 || book.node.amazonLabel === "" ? "Order on Amazon" : book.node.amazonLabel;
- 
+
               return (
                 <div className="py-4 container-sm" key={book.node.id}>
                   <div className="text-center">
@@ -130,10 +130,6 @@ const Books = ( props ) => {
                   )}
                 </div>
               )
-              
-            }
-            else {
-              return <div key={index}></div>
             }
           })}
         </>

@@ -41,6 +41,9 @@ const Header = () => {
                   <NavDropdown.Item href="/song-im-in">
                     Song I'm In
                   </NavDropdown.Item>
+                  <NavDropdown.Item href="/reaching-for-venus">
+                    Reaching for Venus
+                  </NavDropdown.Item>
                 </NavDropdown>
                 <NavLink
                   href="/events"
