@@ -35,14 +35,14 @@ const Header = () => {
                   Blog
                 </NavLink> */}
                 <NavDropdown title="Books" id="book-nav-dropdown">
-                  <NavDropdown.Item href="/heart-like-a-broken-arrow">
-                    Heart Like a Broken Arrow
+                  <NavDropdown.Item href="/reaching-for-venus">
+                    Reaching for Venus
                   </NavDropdown.Item>
                   <NavDropdown.Item href="/song-im-in">
                     Song I'm In
                   </NavDropdown.Item>
-                  <NavDropdown.Item href="/reaching-for-venus">
-                    Reaching for Venus
+                  <NavDropdown.Item href="/heart-like-a-broken-arrow">
+                    Heart Like a Broken Arrow
                   </NavDropdown.Item>
                 </NavDropdown>
                 <NavLink
