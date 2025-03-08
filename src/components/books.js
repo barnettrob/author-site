@@ -131,6 +131,11 @@ const Books = ( props ) => {
                 </div>
               )
             }
+            else {
+              return (
+                <></>
+              )
+            }
           })}
         </>
     )
