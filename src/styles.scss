@@ -26,12 +26,13 @@ body {
     background-color: #d76d43 !important;
     background-color: #2f9365 !important;
     background-color: #910703 !important;
-    // background-color: #4491a2 !important;
-    //background-color: #934628 !important;
+    background-color: #6c5b51 !important;
+    background-color: #564d46 !important;
     a {
       color: #e8dda6 !important;
       color: #ded4ae !important;
       color: #efe7b3 !important;
+      color: #d1cecf !important;
     }
 
     .container {
@@ -60,11 +61,13 @@ body {
         background-color: #2f6a4f;
         background-color: #336b51;
         background-color: #6e0d02;
+        background-color: #3c3533;
         a {
           background-color: #743223;
           background-color: #215910;
           background-color: #2f6a4f;
           background-color: #6e0d02;
+          background-color: #3c3533;
         }
         @media (max-width: 450px) {
           a {
@@ -154,23 +157,30 @@ body {
     color: #ab4a28 !important;
     color: #336b51 !important;
     color: #910703 !important;
+    color: #564d46 !important;
   }
   .btn-outline-primary {
     color: #ab4a28 !important;
     color: #336b51 !important;
     color: #910703 !important;
+    color: #564d46 !important;
     border-color: #ab4a28 !important;
     border-color: #336b51 !important;
     border-color: #a74f46 !important;
+    border-color: #564d46 !important;
     &:hover {
       color: #fff !important;
       background-color: #ab4a28 !important;
       background-color: #336b51 !important;
       background-color: #910703 !important;
+      background-color: #564d46 !important;
     }
   }
   .lost-image {
     max-width: 600px;
+  }
+  .text-muted {
+    color: #535252 !important;
   }
   // Home page tabs.
   .nav-pills .nav-link.active {
