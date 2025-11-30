@@ -5,6 +5,7 @@ import { GatsbyImage, getImage } from "gatsby-plugin-image";
 
 const Books = ( props ) => {
     const title = props.title;
+    const currentDate = new Date();
 
     const data = useStaticQuery(graphql`
     {
@@ -25,6 +26,7 @@ const Books = ( props ) => {
                 }
                 id
                 title
+                publishDate
                 publisher
                 publisherReference {
                   url
@@ -74,6 +76,12 @@ const Books = ( props ) => {
                 typeof book.node.amazonLabel === "undefined" 
                 || book.node.amazonLabel === "" ? "Order on Amazon" : book.node.amazonLabel;
 
+              const publishDateStr = book.node.publishDate;
+              let publishDate = null;
+              if (publishDateStr !== null) {
+                publishDate = new Date(publishDateStr);
+              }
+
               return (
                 <div className="py-4 container-sm" key={book.node.id}>
                   <div className="text-center">
@@ -102,6 +110,12 @@ const Books = ( props ) => {
                   {book.node.title !== null && (
                     <div className="py-4">
                       {book.node.title}
+                    </div>
+                  )}
+                  {publishDate !== null && publishDate instanceof Date && publishDate > currentDate && (
+                    <div className="fs-6 fw-semibold publish-date">
+                      Available on {" "}
+                      {publishDate.toLocaleDateString("en-US", { year: 'numeric', month: 'long', day: 'numeric' })}
                     </div>
                   )}
                   {book.node.publisherReference !== null && (
