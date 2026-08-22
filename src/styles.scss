@@ -28,6 +28,8 @@ body {
     background-color: #910703 !important;
     background-color: #6c5b51 !important;
     background-color: #564d46 !important;
+    background-color: #2E5A84 !important;
+    background-color: #116B91 !important;
     a {
       color: #e8dda6 !important;
       color: #ded4ae !important;
@@ -62,12 +64,15 @@ body {
         background-color: #336b51;
         background-color: #6e0d02;
         background-color: #3c3533;
+        background-color: #194365;
+
         a {
           background-color: #743223;
           background-color: #215910;
           background-color: #2f6a4f;
           background-color: #6e0d02;
           background-color: #3c3533;
+          background-color: #194365;
         }
         @media (max-width: 450px) {
           a {
@@ -153,11 +158,12 @@ body {
     }
   }
   a,
-  a.bn {
+  a.btn {
     color: #ab4a28 !important;
     color: #336b51 !important;
     color: #910703 !important;
     color: #564d46 !important;
+    color: #2E5A84 !important;
   }
   .btn-outline-primary {
     color: #ab4a28 !important;
@@ -168,12 +174,14 @@ body {
     border-color: #336b51 !important;
     border-color: #a74f46 !important;
     border-color: #564d46 !important;
+    border-color: #2E5A84 !important;
     &:hover {
       color: #fff !important;
       background-color: #ab4a28 !important;
       background-color: #336b51 !important;
       background-color: #910703 !important;
       background-color: #564d46 !important;
+      background-color: #2E5A84 !important;
     }
   }
   .lost-image {

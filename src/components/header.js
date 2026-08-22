@@ -35,6 +35,9 @@ const Header = () => {
                   Blog
                 </NavLink> */}
                 <NavDropdown title="Books" id="book-nav-dropdown">
+                  <NavDropdown.Item href="/my-fake-sea">
+                    My Fake Sea
+                  </NavDropdown.Item>
                   <NavDropdown.Item href="/in-the-minds-of-wolves">
                     In the Minds of Wolves
                   </NavDropdown.Item>
